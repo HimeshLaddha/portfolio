@@ -196,7 +196,7 @@ const Contact = () => {
           >
             <div>
               <motion.h3
-                className="text-2xl font-semibold text-white mb-6"
+                className="text-3xl font-semibold text-white mb-6 mt-9"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
@@ -204,7 +204,7 @@ const Contact = () => {
                 Let's Connect
               </motion.h3>
               <motion.p
-                className="text-gray-300 text-lg mb-8"
+                className="text-gray-300 text-lg mb-8 mt-8"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -214,14 +214,14 @@ const Contact = () => {
               </motion.p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {contactInfo.map((info, index) => (
                 <motion.a
                   key={index}
                   href={info.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-dark-light rounded-lg hover:bg-dark-lighter transition-all duration-200 border border-gray-800 hover:border-primary/30 group"
+                  className="flex items-center gap-6 p-4 bg-dark-light rounded-lg hover:bg-dark-lighter transition-all duration-200 border border-gray-800 hover:border-primary/30 group"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
@@ -235,7 +235,7 @@ const Contact = () => {
                     {info.icon}
                   </motion.div>
                   <div>
-                    <p className="text-gray-400 text-sm">{info.label}</p>
+                    <p className="text-gray-400 text-md">{info.label}</p>
                     <p className="text-white group-hover:text-primary transition-colors duration-200">
                       {info.value}
                     </p>
