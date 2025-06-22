@@ -24,7 +24,7 @@ const Projects = () => {
       title: "QuickChat",
       description: "Real-time chat application with image sharing capabilities and modern UI.",
       detailedDescription: "QuickChat is a modern real-time messaging application built with the MERN stack and Socket.io. It enables users to communicate instantly with features like image sharing, typing indicators, and message status updates. The application focuses on providing a seamless chat experience with a clean, intuitive interface.",
-      tech: ["MERN Stack", "Socket.io"],
+      tech: ["React", "Tailwind", "Node", "Express", "MongoDB", "Socket.io"],
       features: [
         "Instant real-time communication using WebSockets",
         "Image sharing with inline previews",
@@ -40,7 +40,7 @@ const Projects = () => {
       title: "QuickStay",
       description: "Hotel booking system with role-based authentication (Currently under development).",
       detailedDescription: "QuickStay is a comprehensive hotel booking platform designed to streamline the reservation process for both guests and hotel administrators. The system features role-based authentication, allowing different access levels for customers, hotel staff, and administrators. Currently in development, it aims to provide a complete solution for hotel management and booking.",
-      tech: ["MERN Stack"],
+      tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
       features: [
         "Role-based login system for guests and admins",
         "Room listings with availability tracking",
@@ -57,7 +57,7 @@ const Projects = () => {
       description: "Basic password manager built with encryption and a clean UI.",
       detailedDescription:
         "PassOp is a simple password management application that allows users to securely store and manage their login credentials. Built using the MERN stack, it focuses on basic functionality like saving passwords, organizing them by category, and ensuring data is encrypted using built-in Node.js crypto modules. It's an ideal starter project to demonstrate secure data handling and user authentication.",
-      tech: ["MERN", "Node Crypto"],
+      tech: ["MERN stack"],
       features: [
         "Secure password storage with basic encryption",
         "Simple UI to add, view, and delete passwords",
@@ -125,7 +125,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-dark-light">
+    <section id="projects" className="py-20 bg-dark">
       <div className="container-custom section-padding">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
@@ -147,7 +147,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-800 hover:border-primary/30 group cursor-pointer"
+              className="bg-dark-light rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-800 hover:border-primary/30 group cursor-pointer"
               variants={cardVariants}
               whileHover={{ scale: 1.03, y: -10 }}
               onClick={() => setSelectedProject(project)}
@@ -343,7 +343,7 @@ const Projects = () => {
                       whileTap={{ scale: 0.95 }}
                     >
                       <span>View Live</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </motion.a>
@@ -357,7 +357,7 @@ const Projects = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <span>View Code</span>
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                     </svg>
                   </motion.a>
