@@ -10,6 +10,8 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req,res)=> res.send("Api is working!!"))
+
 app.post('/status', async (req,res)=>{
   console.log("Server is Live !!!");
 })
@@ -46,11 +48,11 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-// if (process.env.NODE_ENV !== "production") {
-//   app.listen(PORT, () => {
-//     console.log(`Server running on http://localhost:${PORT}`);
-//   });
-// }
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
 
 // Export Server for vercel
 module.exports = app;
