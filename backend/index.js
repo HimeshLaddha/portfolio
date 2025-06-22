@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const serverless = require('serverless-http');
 require('dotenv').config();
 
 const app = express();
@@ -45,11 +46,12 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
-}
+// if (process.env.NODE_ENV !== "production") {
+//   app.listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
+//   });
+// }
 
 // Export Server for vercel
-export default server;
+module.exports = app;
+module.exports.handler = serverless(app);
