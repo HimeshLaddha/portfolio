@@ -9,6 +9,10 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.post('/status', async (req,res)=>{
+  console.log("Server is Live !!!");
+})
+
 // POST route for contact form
 app.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
