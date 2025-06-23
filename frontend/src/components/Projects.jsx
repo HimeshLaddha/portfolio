@@ -16,7 +16,7 @@ const Projects = () => {
         "Comprehensive herb database with search functionality",
         "Educational modules, care tips, and medicinal uses"
       ],
-      image: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "/herbiverse.jpg",
       live: "https://herbiverse.vercel.app/",
       github: "https://github.com/HimeshLaddha/Herbiverse"
     },
