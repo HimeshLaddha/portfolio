@@ -6,7 +6,7 @@ const AboutSection = () => {
       institution: "Pune Institute of Computer Technology",
       period: "2023-2027",
       degree: "B.E. in IT",
-      grade: "CGPA: 9.93",
+      grade: "CGPA: 9.195",
       icon: "🎓"
     },
     {
