@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      title: "Game DevUtopia Club – Member",
-      period: "2024–Present",
+      title: "Game DevUtopia Club - Member",
+      period: "2024-Present",
       location: "PICT's Game Dev Club",
       description: "Active member contributing to game development projects and learning new technologies.",
       icon: "🎮"
     },
     {
-      title: "Impetus & Concepts 2025 – Organizing Team",
+      title: "Impetus & Concepts 2025 - Organizing Team",
       period: "2024",
       location: "PICT",
       description: "Handled tech event logistics and promotions for the annual technical festival.",
@@ -29,7 +29,7 @@ const Experience = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -33 },
     visible: {
       opacity: 1,
       x: 0,

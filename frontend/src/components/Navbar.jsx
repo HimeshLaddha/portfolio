@@ -39,7 +39,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-2xl font-bold text-primary hover:text-blue-400 transition-colors"
+            className="text-3xl font-bold text-primary hover:text-blue-400 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -47,7 +47,7 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop nav links */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 text-lg">
             {navLinks.map(({ href, label }, index) => (
               <motion.a
                 key={href}

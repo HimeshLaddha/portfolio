@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
         delayChildren: 0.3,
         staggerChildren: 0.2
@@ -12,14 +11,30 @@ const Hero = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+  const h1Variant = {
+    hidden: { y: -50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5
-      }
+      transition: { duration: 1 }
+    }
+  };
+
+  const textVariant = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1 }
+    }
+  };
+
+  const imageVariant = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 1 }
     }
   };
 
@@ -58,35 +73,37 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom section-padding relative z-10">
+      <div className="container-custom section-padding relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
         <motion.div
-          className="text-center"
+          className="text-center md:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-primary to-blue-400 bg-clip-text text-transparent"
-            variants={itemVariants}
+            variants={h1Variant}
+            whileHover={{ scale: 1.05, y: -2 }}
           >
             Himesh Sampat Laddha
           </motion.h1>
+
           <motion.p
             className="text-xl md:text-2xl text-gray-300 mb-4 font-medium"
-            variants={itemVariants}
+            variants={textVariant}
           >
             Full-Stack Web Developer | 3D Enthusiast
           </motion.p>
           <motion.p
-            className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
-            variants={itemVariants}
+            className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0"
+            variants={textVariant}
           >
-            "Crafting immersive digital experiences, one project at a time."
+            "Engineer at heart, creator in soul — I build modern digital experiences where performance meets creativity. Whether it's clean code or captivating UI, I craft every project like a piece of art meant to inspire, engage, and leave a mark."
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-center mr-24"
+            variants={textVariant}
           >
             <motion.a
               href="/Himesh_Laddha_Resume.pdf"
@@ -108,18 +125,23 @@ const Hero = () => {
             </motion.a>
           </motion.div>
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      {/* <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </motion.div> */}
+        {/* Right side (Image) */}
+        <motion.div
+          className="flex-1"
+          variants={imageVariant}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.img
+            src="/himesh.jpg"
+            alt="Himesh Laddha"
+            className="mx-4 w-80 h-80 max-w-sm md:mx-0 rounded-full border-4 border-primary/50 shadow-xl transition-all duration-500 hover:scale-115 hover:shadow-primary/40 hover:shadow-2xl hover:border-blue-500"
+            whileHover={{ scale: 1.18, rotate: 1 }}
+            whileTap={{ scale: 0.95 }}
+          />
+        </motion.div>
+      </div>
     </section>
   );
 };

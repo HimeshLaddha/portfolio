@@ -12,8 +12,8 @@ app.use(express.json());
 
 app.get("/", (req,res)=> res.send("Api is working!!"))
 
-app.post('/status', async (req,res)=>{
-  console.log("Server is Live !!!");
+app.get('/status', async (req,res)=>{
+  res.send("Server is Live !!!");
 })
 
 // POST route for contact form

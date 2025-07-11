@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState('All');
 
   const projects = [
     {
@@ -10,6 +12,7 @@ const Projects = () => {
       description: "Interactive Herbal Learning Hub with 2D/3D models for educational purposes.",
       detailedDescription: "HerbiVerse is a comprehensive educational platform that combines traditional herbal knowledge with modern web technologies. The application features interactive 2D and 3D models of various herbs, allowing users to explore their properties, uses, and benefits in an immersive environment. Built with React and Three.js, it provides an engaging learning experience for students and enthusiasts of herbal medicine.",
       tech: ["React", "Tailwind", "Node", "Express", "Three.js", "MongoDB"],
+      domain: "3D/Educational",
       features: [
         "Interactive 3D herb models with detailed animations",
         "Educational insights with plant care tips, benefits, and usage",
@@ -25,6 +28,7 @@ const Projects = () => {
       description: "Real-time chat application with image sharing capabilities and modern UI.",
       detailedDescription: "QuickChat is a modern real-time messaging application built with the MERN stack and Socket.io. It enables users to communicate instantly with features like image sharing, typing indicators, and message status updates. The application focuses on providing a seamless chat experience with a clean, intuitive interface.",
       tech: ["React", "Tailwind", "Node", "Express", "MongoDB", "Socket.io"],
+      domain: "Full-Stack",
       features: [
         "Instant real-time communication using WebSockets",
         "Image sharing with inline previews",
@@ -41,6 +45,7 @@ const Projects = () => {
       description: "Hotel booking system with role-based authentication (Currently under development).",
       detailedDescription: "QuickStay is a comprehensive hotel booking platform designed to streamline the reservation process for both guests and hotel administrators. The system features role-based authentication, allowing different access levels for customers, hotel staff, and administrators. Currently in development, it aims to provide a complete solution for hotel management and booking.",
       tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
+      domain: "Full-Stack",
       features: [
         "Role-based login system for guests and admins",
         "Room listings with availability tracking",
@@ -49,28 +54,66 @@ const Projects = () => {
         "Planned Stripe integration for secure payments"
       ],
       image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=500",
-      live: null,
-      github: "#"
+      live: "https://hotel-booking-frontend-pink-delta.vercel.app/",
+      github: "https://github.com/HimeshLaddha/Hotel_Booking"
     },
     {
       title: "PassOp",
       description: "Basic password manager built with encryption and a clean UI.",
-      detailedDescription:
-        "PassOp is a simple password management application that allows users to securely store and manage their login credentials. Built using the MERN stack, it focuses on basic functionality like saving passwords, organizing them by category, and ensuring data is encrypted using built-in Node.js crypto modules. It's an ideal starter project to demonstrate secure data handling and user authentication.",
+      detailedDescription: "PassOp is a simple password management application that allows users to securely store and manage their login credentials. Built using the MERN stack, it focuses on basic functionality like saving passwords, organizing them by category, and ensuring data is encrypted using built-in Node.js crypto modules. It's an ideal starter project to demonstrate secure data handling and user authentication.",
       tech: ["MERN stack"],
+      domain: "MERN-Stack",
       features: [
         "Secure password storage with basic encryption",
         "Simple UI to add, view, and delete passwords",
         "Category-wise password organization",
         "Copy-to-clipboard functionality for convenience"
       ],
-      image:
-        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=500",
       live: false,
       github: "https://github.com/HimeshLaddha/Password_Manager"
+    },
+    {
+      title: "To Do List",
+      description: "A productivity app for managing daily tasks and projects.",
+      detailedDescription: "A comprehensive task management application that helps users organize their daily activities and projects. Features include task categorization, priority levels, due dates, and progress tracking.",
+      tech: ["React", "Node.js", "MongoDB"],
+      domain: "MERN-Stack",
+      features: [
+        "Task categorization",
+        "Every task is created with a unique identifier, ensuring clean operations like edit/delete.",
+        "Users can toggle completion status for better task tracking.",
+        "Show/Hide Completed Task"
+      ],
+      image: "https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=500",
+      live: false,
+      github: "https://github.com/HimeshLaddha/Todo_List"
+    },
+    {
+      title: "Portfolio Website",
+      description: "Personal portfolio website with modern design and animations.",
+      detailedDescription: "A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations, dark theme, and comprehensive sections showcasing skills, projects, and experience.",
+      tech: ["React", "Tailwind", "Framer Motion"],
+      domain: "Frontend",
+      features: [
+        "Responsive design with mobile-first approach",
+        "Smooth animations and micro-interactions",
+        "Dark theme with blue accents",
+        "Contact form integration"
+      ],
+      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=500",
+      live: "https://himesh-portfolio-delta.vercel.app/",
+      github: "https://github.com/HimeshLaddha/portfolio"
     }
-
   ];
+
+  // Get unique domains for filter options
+  const domains = ['All', ...new Set(projects.map(project => project.domain))];
+
+  // Filter projects based on selected domain
+  const filteredProjects = selectedFilter === 'All' 
+    ? projects 
+    : projects.filter(project => project.domain === selectedFilter);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -124,6 +167,42 @@ const Projects = () => {
     exit: { opacity: 0 }
   };
 
+  const allProjectsVariants = {
+    hidden: {
+      opacity: 0,
+      y: 100
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: 100,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
+
+  const filterVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
+
+  // Show only first 4 projects in the main view
+  const featuredProjects = projects.slice(0, 4);
+
   return (
     <section id="projects" className="py-20 bg-dark">
       <div className="container-custom section-padding">
@@ -144,7 +223,7 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={index}
               className="bg-dark-light rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-800 hover:border-primary/30 group cursor-pointer"
@@ -166,6 +245,9 @@ const Projects = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
+                </div>
+                <div className="absolute top-4 left-4 bg-dark/60 backdrop-blur-sm rounded-full px-3 py-1">
+                  <span className="text-primary text-sm font-medium">{project.domain}</span>
                 </div>
               </div>
 
@@ -222,9 +304,30 @@ const Projects = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* All Projects Button */}
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={() => setShowAllProjects(true)}
+            className="px-8 py-4 bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 mx-auto"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>View All Projects</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </motion.button>
+        </motion.div>
       </div>
 
-      {/* Modal */}
+      {/* Project Detail Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -266,6 +369,9 @@ const Projects = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent"></div>
+                <div className="absolute top-4 left-4 bg-dark/60 backdrop-blur-sm rounded-full px-3 py-1">
+                  <span className="text-primary text-sm font-medium">{selectedProject.domain}</span>
+                </div>
               </div>
 
               {/* Content */}
@@ -362,6 +468,176 @@ const Projects = () => {
                     </svg>
                   </motion.a>
                 </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* All Projects Modal */}
+      <AnimatePresence>
+        {showAllProjects && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            variants={backdropVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            {/* Backdrop */}
+            <motion.div
+              className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+              onClick={() => setShowAllProjects(false)}
+            />
+
+            {/* All Projects Content */}
+            <motion.div
+              className="relative bg-dark border border-gray-800 rounded-2xl max-w-7xl w-full max-h-[90vh] overflow-y-auto"
+              variants={allProjectsVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {/* Header */}
+              <div className="sticky top-0 bg-dark border-b border-gray-800 p-6 flex items-center justify-between">
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-2">All Projects</h2>
+                  <p className="text-gray-400">
+                    Showing {filteredProjects.length} of {projects.length} projects
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowAllProjects(false)}
+                  className="bg-dark-light hover:bg-dark-lighter rounded-full p-2 transition-colors"
+                >
+                  <svg className="w-6 h-6 text-gray-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Filter Section */}
+              <motion.div
+                className="p-6 border-b border-gray-800"
+                variants={filterVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <div className="flex flex-wrap gap-3">
+                  <span className="text-gray-300 font-medium mr-2">Filter by domain:</span>
+                  {domains.map((domain) => (
+                    <motion.button
+                      key={domain}
+                      onClick={() => setSelectedFilter(domain)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                        selectedFilter === domain
+                          ? 'bg-primary text-white shadow-lg shadow-primary/25'
+                          : 'bg-dark-light text-gray-300 hover:bg-dark-lighter hover:text-white border border-gray-700'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {domain}
+                      {domain !== 'All' && (
+                        <span className="ml-2 text-xs opacity-75">
+                          ({projects.filter(p => p.domain === domain).length})
+                        </span>
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Projects Grid */}
+              <div className="p-6">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={selectedFilter}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                  >
+                    {filteredProjects.map((project, index) => (
+                      <motion.div
+                        key={`${project.title}-${selectedFilter}`}
+                        className="bg-dark-light rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-800 hover:border-primary/30 group cursor-pointer"
+                        variants={cardVariants}
+                        whileHover={{ scale: 1.03, y: -5 }}
+                        onClick={() => {
+                          setShowAllProjects(false);
+                          setSelectedProject(project);
+                        }}
+                        layout
+                      >
+                        <div className="relative overflow-hidden">
+                          <motion.img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-40 object-cover"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                          <div className="absolute top-3 right-3 bg-primary/20 backdrop-blur-sm rounded-full p-1.5">
+                            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                          </div>
+                          <div className="absolute top-3 left-3 bg-dark/60 backdrop-blur-sm rounded-full px-2 py-1">
+                            <span className="text-primary text-xs font-medium">{project.domain}</span>
+                          </div>
+                        </div>
+
+                        <div className="p-5">
+                          <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
+                          <p className="text-gray-300 text-sm mb-3 line-clamp-2">{project.description}</p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {project.tech.slice(0, 2).map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full border border-primary/30"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                            {project.tech.length > 2 && (
+                              <span className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full">
+                                +{project.tech.length - 2}
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="flex items-center justify-between">
+                            <span className="text-primary text-xs font-medium">View Details</span>
+                            <div className="flex gap-2">
+                              {project.live && (
+                                <div className="w-2 h-2 bg-green-500 rounded-full" title="Live Demo Available"></div>
+                              )}
+                              <div className="w-2 h-2 bg-blue-500 rounded-full" title="Source Code Available"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* No Results Message */}
+                {filteredProjects.length === 0 && (
+                  <motion.div
+                    className="text-center py-12"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <div className="text-gray-400 text-lg mb-2">No projects found</div>
+                    <div className="text-gray-500 text-sm">Try selecting a different domain filter</div>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           </motion.div>

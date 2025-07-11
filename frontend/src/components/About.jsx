@@ -36,7 +36,7 @@ const AboutSection = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -25 },
     visible: {
       opacity: 1,
       x: 0,
@@ -66,7 +66,6 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
           >
             <motion.p
               className="text-lg text-gray-300 leading-relaxed mb-6"
@@ -75,7 +74,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              I'm Himesh, a passionate web developer from Pune currently pursuing my B.E. in Information Technology at Pune Institute of Computer Technology. I'm deeply interested in building full-stack web applications and immersive digital experiences, especially using technologies like React, Node.js, MongoDB, and Three.js.
+              Hey! I'm Himesh — a full-stack web developer from Pune, currently pursuing B.E. in Information Technology at PICT. I specialize in crafting modern, interactive web applications with tools like React, Node.js, MongoDB, and Three.js. I am passionate about turning ideas into powerful digital experiences that look great and work even better.
             </motion.p>
 
             <motion.p
@@ -85,7 +84,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              My strengths lie in my logical thinking, eagerness to learn, and ability to work collaboratively in teams. I love taking on challenges, participating in coding contests, and continuously improving my skills through real-world projects. I'm a strong believer in “learning by building” — and that's exactly what I strive to do every day.
+              I believe in learning by doing. Be it hackathons, coding contests, or real-world freelance projects — every challenge helps me grow. My logical thinking, obsession with clean code, and love for collaboration define the way I work in teams and solo. Along with my technical journey, my academic background has played a vital role in shaping my foundation and discipline.
             </motion.p>
 
             <motion.p
@@ -95,16 +94,16 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Along with my technical journey, my academic background has played a vital role in shaping my foundation and discipline.
+              I'm not just focused on building apps — I'm building Myself too. Whether it's keeping up with the latest tech or helping a teammate debug late at night, I'm all in. The goal? Grow every day and contribute something meaningful.
             </motion.p>
             <motion.p
-              className="text-lg text-gray-300 leading-relaxed mb-10 text-left"
+              className="text-lg text-gray-200 leading-relaxed mb-10 text-left mt-5"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Here's a quick overview of my education so far:
+              Here's a snapshot of my educational journey that shaped the foundation I'm standing on today:
             </motion.p>
             <motion.div
               className="space-y-6 text-left"
