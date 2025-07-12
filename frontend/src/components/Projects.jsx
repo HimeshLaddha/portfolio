@@ -24,23 +24,6 @@ const Projects = () => {
       github: "https://github.com/HimeshLaddha/Herbiverse"
     },
     {
-      title: "QuickChat",
-      description: "Real-time chat application with image sharing capabilities and modern UI.",
-      detailedDescription: "QuickChat is a modern real-time messaging application built with the MERN stack and Socket.io. It enables users to communicate instantly with features like image sharing, typing indicators, and message status updates. The application focuses on providing a seamless chat experience with a clean, intuitive interface.",
-      tech: ["React", "Tailwind", "Node", "Express", "MongoDB", "Socket.io"],
-      domain: "Full-Stack",
-      features: [
-        "Instant real-time communication using WebSockets",
-        "Image sharing with inline previews",
-        "Secure user authentication and session management",
-        "Minimal, modern UI",
-        "Responsive chat interface"
-      ],
-      image: "https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=500",
-      live: "https://chat-app-weld-five-80.vercel.app/",
-      github: "https://github.com/HimeshLaddha/Chat_App"
-    },
-    {
       title: "QuickStay",
       description: "Hotel booking system with role-based authentication (Currently under development).",
       detailedDescription: "QuickStay is a comprehensive hotel booking platform designed to streamline the reservation process for both guests and hotel administrators. The system features role-based authentication, allowing different access levels for customers, hotel staff, and administrators. Currently in development, it aims to provide a complete solution for hotel management and booking.",
@@ -56,6 +39,23 @@ const Projects = () => {
       image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=500",
       live: "https://hotel-booking-frontend-pink-delta.vercel.app/",
       github: "https://github.com/HimeshLaddha/Hotel_Booking"
+    },
+    {
+      title: "QuickChat",
+      description: "Real-time chat application with image sharing capabilities and modern UI.",
+      detailedDescription: "QuickChat is a modern real-time messaging application built with the MERN stack and Socket.io. It enables users to communicate instantly with features like image sharing, typing indicators, and message status updates. The application focuses on providing a seamless chat experience with a clean, intuitive interface.",
+      tech: ["React", "Tailwind", "Node", "Express", "MongoDB", "Socket.io"],
+      domain: "Full-Stack",
+      features: [
+        "Instant real-time communication using WebSockets",
+        "Image sharing with inline previews",
+        "Secure user authentication and session management",
+        "Minimal, modern UI",
+        "Responsive chat interface"
+      ],
+      image: "https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=500",
+      live: "https://chat-app-weld-five-80.vercel.app/",
+      github: "https://github.com/HimeshLaddha/Chat_App"
     },
     {
       title: "PassOp",
