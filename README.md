@@ -35,7 +35,7 @@ A place where I showcase who I am, the skills I bring to the table, and the proj
 
 ## 📝 How to Use Locally
 
-- git clone https://github.com/HimeshLadha/portfolio.git
+- git clone https://github.com/HimeshLaddha/portfolio.git
 - cd portfolio
 - npm install
 - npm run dev
