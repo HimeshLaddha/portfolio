@@ -4,7 +4,7 @@ const Experience = () => {
   const experiences = [
     {
       title: "Frontend Developer Intern - DesignTrip",
-      period: "Jun 2025 - Dec 2025",
+      period: "Jul 2025 - Dec 2025",
       location: "DesignTrip (Remote)",
       description: (
         <>
