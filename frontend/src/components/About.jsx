@@ -47,7 +47,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-dark">
+    <section id="about" className="py-20 bg-dark-light">
       <div className="container-custom section-padding">
         <div className="max-w-4xl mx-auto text-left">
           <motion.h2

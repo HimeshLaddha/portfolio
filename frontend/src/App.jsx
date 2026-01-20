@@ -4,6 +4,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Toaster } from 'react-hot-toast';
@@ -15,9 +16,10 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Experience />
-      <Projects />
-      <Skills />
+      <Skills />          {/* Show tech stack early */}
+      <Experience />      {/* Internship + clubs */}
+      <Projects />        {/* Proof of skills */}
+      <Certifications />
       <Contact />
       <Footer />
     </div>

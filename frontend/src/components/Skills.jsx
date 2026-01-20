@@ -4,22 +4,22 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["HTML", "CSS", "React.js", "Three.js", "TailwindCSS", "Javascript", "Typescript"],
+      skills: ["HTML", "CSS", "React.js", "Next.js", "Tailwind CSS", "Three.js", "Framer Motion"],
       icon: "🎨"
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express.js", "MongoDB"],
+      skills: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
       icon: "⚙️"
     },
     {
       title: "Languages",
-      skills: ["Python", "C++", "Java", "JavaScript"],
+      skills: ["Python", "C++", "Java", "JavaScript", "Typescript"],
       icon: "💻"
     },
     {
       title: "Tools",
-      skills: ["Git", "GitHub", "Vercel", "Figma"],
+      skills: ["Git", "GitHub", "Vercel", "Figma", "Blender"],
       icon: "🛠️"
     }
   ];
@@ -46,7 +46,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-dark-light">
+    <section id="skills" className="py-20 bg-dark">
       <div className="container-custom section-padding">
         <motion.h2 
           className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
@@ -68,7 +68,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              className="w-full max-w-md mx-auto bg-dark rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-800 hover:border-primary/30 group"
+              className="w-full max-w-md mx-auto bg-dark-light rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-800 hover:border-primary/30 group"
               variants={cardVariants}
               whileHover={{ scale: 1.03, y: -10 }}
             >
