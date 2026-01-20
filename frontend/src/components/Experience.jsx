@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      title: "Frontend Developer Intern - DesignTrip",
+      title: "Frontend Developer Intern - TheDesignTrip",
       period: "Jul 2025 - Dec 2025",
-      location: "DesignTrip (Remote)",
+      location: "TheDesignTrip",
       description: (
         <>
           <p className="mb-3">

@@ -6,7 +6,7 @@ const Certifications = () => {
             title: "AR/VR Bootcamp",
             org: "CDAC Pune",
             description:
-                "Hands-on training in AR/VR fundamentals, 3D concepts, and immersive application development.",
+                "Hands on training in AR/VR fundamentals, 3D concepts, and immersive application development.",
             link: "/certificates/ar-vr-cdac.pdf"
         },
         {
@@ -27,7 +27,7 @@ const Certifications = () => {
             title: "Summer Analytics - Data Science & ML",
             org: "IIT Guwahati",
             description:
-                "Intensive program covering data analysis, machine learning techniques, and real-world problem solving.",
+                "Intensive program covering data analysis, machine learning techniques, and real world problem solving.",
             link: "/certificates/summer-analytics-iitg.pdf"
         },
         {
