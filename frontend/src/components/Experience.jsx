@@ -3,6 +3,27 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
+      title: "Frontend Developer Intern - DesignTrip",
+      period: "Jun 2025 - Dec 2025",
+      location: "DesignTrip (Remote)",
+      description: (
+        <>
+          <p className="mb-3">
+            Worked as a Frontend Developer Intern at TheDesignTrip, contributing to multiple real world client projects in a collaborative and fast paced environment. Actively coordinated with UI/UX designers and backend engineers to deliver production ready interfaces while adhering to industry standard development practices.
+          </p>
+
+          <p className="mb-3">
+            Contributed to a large scale government project for the client <strong>Protean</strong>, where I was responsible for approximately <strong>20% of the overall UI development</strong>. My work focused on implementing pixel perfect user interfaces using <strong>Next.js</strong> and <strong>TypeScript</strong>, ensuring complete frontend functionality and writing clean, scalable code aligned with enterprise standards to support smooth backend integration. This project provided valuable exposure to structured workflows and large codebases.
+          </p>
+
+          <p>
+            Additionally, worked on an animation intensive frontend project for the client <strong>JWGlobal</strong>, where I independently handled around <strong>30% of the UI development</strong> and nearly <strong>50% of the animation logic</strong>. Implementing complex UI animations strengthened my logical thinking and mathematical understanding, particularly in managing motion timing, spatial calculations, and smooth transitions, significantly improving my problem-solving and attention to detail.
+          </p>
+        </>
+      ),
+      icon: "💼"
+    },
+    {
       title: "Game DevUtopia Club - Member",
       period: "2024-Present",
       location: "PICT's Game Dev Club",
@@ -42,7 +63,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-dark-light">
       <div className="container-custom section-padding">
-        <motion.h2 
+        <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,9 +72,9 @@ const Experience = () => {
         >
           <span className="text-primary">Experience</span>
         </motion.h2>
-        
+
         <div className="max-w-4xl mx-auto">
-          <motion.div 
+          <motion.div
             className="space-y-8"
             variants={containerVariants}
             initial="hidden"
@@ -68,7 +89,7 @@ const Experience = () => {
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <div className="flex items-start gap-4">
-                  <motion.div 
+                  <motion.div
                     className="text-3xl"
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -81,7 +102,9 @@ const Experience = () => {
                       <span className="text-primary font-medium">{exp.period}</span>
                     </div>
                     <p className="text-gray-400 mb-3">{exp.location}</p>
-                    <p className="text-gray-300">{exp.description}</p>
+                    <div className="text-gray-300 space-y-3">
+                      {exp.description}
+                    </div>
                   </div>
                 </div>
               </motion.div>

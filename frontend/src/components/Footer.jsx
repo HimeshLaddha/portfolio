@@ -18,7 +18,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            © 2025 Himesh Laddha | Built with ❤️ using React & Tailwind
+            © 2025 Himesh Laddha | Built with ❤️
           </motion.p>
         </div>
       </div>

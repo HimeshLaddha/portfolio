@@ -74,7 +74,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Hey! I'm Himesh — a full-stack web developer from Pune, currently pursuing B.E. in Information Technology at PICT. I specialize in crafting modern, interactive web applications with tools like React, Node.js, MongoDB, and Three.js. I am passionate about turning ideas into powerful digital experiences that look great and work even better.
+              I'm Himesh, a full stack web developer and Information Technology undergraduate at PICT, Pune. I enjoy building clean, functional, and engaging web applications using technologies like React, Typescript, Node.js, MongoDB, and experimenting with Three.js when visuals matter. My focus is always on writing practical, maintainable code that solves real problems.
             </motion.p>
 
             <motion.p
@@ -84,7 +84,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              I believe in learning by doing. Be it hackathons, coding contests, or real-world freelance projects — every challenge helps me grow. My logical thinking, obsession with clean code, and love for collaboration define the way I work in teams and solo. Along with my technical journey, my academic background has played a vital role in shaping my foundation and discipline.
+              I strongly believe that real learning happens through hands on work. From academic projects to self initiated builds, each experience has helped me strengthen my problem solving skills and understanding of system design. I value clean architecture, logical thinking, and continuous improvement in everything I create.
             </motion.p>
 
             <motion.p
@@ -94,7 +94,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              I'm not just focused on building apps — I'm building Myself too. Whether it's keeping up with the latest tech or helping a teammate debug late at night, I'm all in. The goal? Grow every day and contribute something meaningful.
+              Beyond code, I'm someone who enjoys collaborating, learning from others, and helping teammates whenever possible. I'm actively working on improving both my technical depth and professional mindset step by step. My goal is simple: keep learning, build meaningful products, and grow into a reliable engineer who adds real value.
             </motion.p>
             <motion.p
               className="text-lg text-gray-200 leading-relaxed mb-10 text-left mt-5"

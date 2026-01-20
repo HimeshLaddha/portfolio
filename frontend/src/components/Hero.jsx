@@ -73,7 +73,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom section-padding relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="container-custom section-padding relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 mt-[100px] md:mt-0">
         <motion.div
           className="text-center md:text-left"
           variants={containerVariants}
@@ -98,11 +98,11 @@ const Hero = () => {
             className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0"
             variants={textVariant}
           >
-            "Engineer at heart, creator in soul — I build modern digital experiences where performance meets creativity. Whether it's clean code or captivating UI, I craft every project like a piece of art meant to inspire, engage, and leave a mark."
+            Engineer by mindset, creator by passion. I build modern digital experiences where performance, usability, and clean design come together. Every project I work on is driven by attention to detail, solid engineering principles, and a focus on creating meaningful user experiences.
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-center mr-24"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
             variants={textVariant}
           >
             <motion.a
