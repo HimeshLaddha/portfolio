@@ -25,18 +25,20 @@ const Experience = () => {
     },
     {
       title: "Game DevUtopia Club - Member",
-      period: "2024-Present",
-      location: "PICT's Game Dev Club",
-      description: "Active member contributing to game development projects and learning new technologies.",
+      period: "2024 - Present",
+      location: "PICT Game DevUtopia Club",
+      description:
+        "Contributed across multiple teams within the club, including event management, design, and technical support. Actively involved in planning and coordinating club events, creating visual assets, and assisting with technical setups. Gained hands on exposure to design workflows and learned the fundamentals of 3D modeling using Blender.",
       icon: "🎮"
     },
     {
       title: "Impetus & Concepts 2025 - Organizing Team",
       period: "2024",
-      location: "PICT",
-      description: "Handled tech event logistics and promotions for the annual technical festival.",
+      location: "PICT, Pune",
+      description:
+        "Part of the organizing team for the annual technical festival, contributing to event planning, technical coordination, and promotional activities. Gained experience in teamwork, coordination under deadlines, and managing responsibilities in a large scale college event.",
       icon: "📅"
-    }
+    }    
   ];
 
   const containerVariants = {
