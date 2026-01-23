@@ -74,7 +74,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              I'm Himesh, a full stack web developer and Information Technology undergraduate at PICT, Pune. I enjoy building clean, functional, and engaging web applications using technologies like React, Typescript, Node.js, MongoDB, and experimenting with Three.js when visuals matter. My focus is always on writing practical, maintainable code that solves real problems.
+              I believe that real learning happens through building. As an Information Technology student, I've refined my problem solving skills by moving beyond theory and diving into hands on system design. I specialize in the React ecosystem and Node.js, with a keen interest in 3D visuals using Three.js when the experience demands it.
             </motion.p>
 
             <motion.p
@@ -84,7 +84,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              I strongly believe that real learning happens through hands on work. From academic projects to self initiated builds, each experience has helped me strengthen my problem solving skills and understanding of system design. I value clean architecture, logical thinking, and continuous improvement in everything I create.
+              Beyond web development, I am deeply invested in research-oriented computing. My seminar work on <strong>Driver Drowsiness Detection using AI and Deep Learning</strong> involved extensive dataset analysis and model experimentation. I am actively seeking to bridge the gap between experimental AI and practical deployment, with a goal of converting these technical explorations into published research.
             </motion.p>
 
             <motion.p
@@ -94,7 +94,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Beyond code, I'm someone who enjoys collaborating, learning from others, and helping teammates whenever possible. I'm actively working on improving both my technical depth and professional mindset step by step. My goal is simple: keep learning, build meaningful products, and grow into a reliable engineer who adds real value.
+              Beyond code, I'm someone who enjoys collaborating, learning from others, and helping teammates whenever possible. I'm actively working on improving both my technical depth and professional mindset step by step. I value collaboration, clean architecture, and continuous iteration. Whether optimizing a backend service or fine tuning a neural network, I aim to be a reliable engineer who delivers tangible value.
             </motion.p>
             <motion.p
               className="text-lg text-gray-200 leading-relaxed mb-10 text-left mt-5"

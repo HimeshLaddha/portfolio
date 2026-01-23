@@ -98,7 +98,9 @@ const Hero = () => {
             className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto md:mx-0"
             variants={textVariant}
           >
-            Engineer by mindset, creator by passion. I build modern digital experiences where performance, usability, and clean design come together. Every project I work on is driven by attention to detail, solid engineering principles, and a focus on creating meaningful user experiences.
+            I'm Himesh, a Full Stack Developer and IT undergraduate at PICT, Pune. I build scalable, functional web applications using the MERN stack and TypeScript, while exploring the intersection of software engineering and AI research. 
+            <br />
+            My focus is simple: writing clean, maintainable code that solves real world problems.
           </motion.p>
 
           <motion.div

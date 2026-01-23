@@ -9,7 +9,7 @@ const Skills = () => {
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
+      skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs"],
       icon: "⚙️"
     },
     {

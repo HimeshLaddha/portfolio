@@ -8,22 +8,6 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "HerbiVerse",
-      description: "Interactive Herbal Learning Hub with 2D/3D models for educational purposes.",
-      detailedDescription: "HerbiVerse is a comprehensive educational platform that combines traditional herbal knowledge with modern web technologies. The application features interactive 2D and 3D models of various herbs, allowing users to explore their properties, uses, and benefits in an immersive environment. Built with React and Three.js, it provides an engaging learning experience for students and enthusiasts of herbal medicine.",
-      tech: ["React", "Tailwind", "Node", "Express", "Three.js", "MongoDB"],
-      domain: "3D/Educational",
-      features: [
-        "Interactive 3D herb models with detailed animations",
-        "Educational insights with plant care tips, benefits, and usage",
-        "Comprehensive herb database with search functionality",
-        "Educational modules, care tips, and medicinal uses"
-      ],
-      image: "/herbiverse.jpg",
-      live: "https://herbiverse.vercel.app/",
-      github: "https://github.com/HimeshLaddha/Herbiverse"
-    },
-    {
       title: "QuickStay",
       description: "Hotel booking system with role-based authentication (Currently under development).",
       detailedDescription: "QuickStay is a comprehensive hotel booking platform designed to streamline the reservation process for both guests and hotel administrators. The system features role-based authentication, allowing different access levels for customers, hotel staff, and administrators. Currently in development, it aims to provide a complete solution for hotel management and booking.",
@@ -39,6 +23,22 @@ const Projects = () => {
       image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=500",
       live: "https://hotel-booking-frontend-pink-delta.vercel.app/",
       github: "https://github.com/HimeshLaddha/Hotel_Booking"
+    },
+    {
+      title: "HerbiVerse",
+      description: "Interactive Herbal Learning Hub with 2D/3D models for educational purposes.",
+      detailedDescription: "HerbiVerse is a comprehensive educational platform that combines traditional herbal knowledge with modern web technologies. The application features interactive 2D and 3D models of various herbs, allowing users to explore their properties, uses, and benefits in an immersive environment. Built with React and Three.js, it provides an engaging learning experience for students and enthusiasts of herbal medicine.",
+      tech: ["React", "Tailwind", "Node", "Express", "Three.js", "MongoDB"],
+      domain: "3D/Educational",
+      features: [
+        "Interactive 3D herb models with detailed animations",
+        "Educational insights with plant care tips, benefits, and usage",
+        "Comprehensive herb database with search functionality",
+        "Educational modules, care tips, and medicinal uses"
+      ],
+      image: "/herbiverse.jpg",
+      live: "https://herbiverse.vercel.app/",
+      github: "https://github.com/HimeshLaddha/Herbiverse"
     },
     {
       title: "QuickChat",
@@ -240,13 +240,13 @@ const Projects = () => {
                   transition={{ duration: 0.3 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm rounded-full p-2">
+                <div className="absolute top-4 right-4 bg-black rounded-full p-2">
                   <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </div>
-                <div className="absolute top-4 left-4 bg-dark/60 backdrop-blur-sm rounded-full px-3 py-1">
+                <div className="absolute top-4 left-4 bg-dark rounded-full px-3 py-1">
                   <span className="text-primary text-sm font-medium">{project.domain}</span>
                 </div>
               </div>
@@ -369,7 +369,7 @@ const Projects = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 bg-dark/60 backdrop-blur-sm rounded-full px-3 py-1">
+                <div className="absolute top-4 left-4 bg-dark rounded-full px-3 py-1">
                   <span className="text-primary text-sm font-medium">{selectedProject.domain}</span>
                 </div>
               </div>
@@ -580,13 +580,13 @@ const Projects = () => {
                             transition={{ duration: 0.3 }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
-                          <div className="absolute top-3 right-3 bg-primary/20 backdrop-blur-sm rounded-full p-1.5">
+                          <div className="absolute top-3 right-3 bg-black rounded-full p-1.5">
                             <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
                           </div>
-                          <div className="absolute top-3 left-3 bg-dark/60 backdrop-blur-sm rounded-full px-2 py-1">
+                          <div className="absolute top-3 left-3 bg-dark rounded-full px-2 py-1">
                             <span className="text-primary text-xs font-medium">{project.domain}</span>
                           </div>
                         </div>

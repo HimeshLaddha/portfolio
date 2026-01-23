@@ -9,7 +9,7 @@ const Experience = () => {
       description: (
         <>
           <p className="mb-3">
-            Worked as a Frontend Developer Intern at TheDesignTrip, contributing to multiple real world client projects in a collaborative and fast paced environment. Actively coordinated with UI/UX designers and backend engineers to deliver production ready interfaces while adhering to industry standard development practices.
+            During my internship at <strong>TheDesignTrip</strong>, I worked at the intersection of design and engineering, translating creative concepts into production-ready code.
           </p>
 
           <p className="mb-3">
@@ -38,7 +38,7 @@ const Experience = () => {
       description:
         "Part of the organizing team for the annual technical festival, contributing to event planning, technical coordination, and promotional activities. Gained experience in teamwork, coordination under deadlines, and managing responsibilities in a large scale college event.",
       icon: "📅"
-    }    
+    }
   ];
 
   const containerVariants = {
