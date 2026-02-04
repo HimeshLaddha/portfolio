@@ -3,115 +3,100 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      title: "Frontend Developer Intern - TheDesignTrip",
+      title: "Frontend Developer Intern",
+      company: "TheDesignTrip",
       period: "Jul 2025 - Dec 2025",
-      location: "TheDesignTrip",
-      description: (
-        <>
-          <p className="mb-3">
-            During my internship at <strong>TheDesignTrip</strong>, I worked at the intersection of design and engineering, translating creative concepts into production-ready code.
-          </p>
-
-          <p className="mb-3">
-            Contributed to a large scale government project for the client <strong>Protean</strong>, where I was responsible for approximately <strong>20% of the overall UI development</strong>. My work focused on implementing pixel perfect user interfaces using <strong>Next.js</strong> and <strong>TypeScript</strong>, ensuring complete frontend functionality and writing clean, scalable code aligned with enterprise standards to support smooth backend integration. This project provided valuable exposure to structured workflows and large codebases.
-          </p>
-
-          <p>
-            Additionally, worked on an animation intensive frontend project for the client <strong>JWGlobal</strong>, where I independently handled around <strong>30% of the UI development</strong> and nearly <strong>50% of the animation logic</strong>. Implementing complex UI animations strengthened my logical thinking and mathematical understanding, particularly in managing motion timing, spatial calculations, and smooth transitions, significantly improving my problem-solving and attention to detail.
-          </p>
-        </>
-      ),
+      description: [
+        "Contributed to a government project for Protean, handling 20% of UI development using Next.js & TypeScript.",
+        "Built pixel-perfect, scalable interfaces and ensured smooth backend integration.",
+        "Independently handled 30% of UI and 50% of animation logic for a JWGlobal project.",
+        "Mastered complex UI animations, improving logical thinking and attention to detail."
+      ],
       icon: "💼"
     },
     {
-      title: "Game DevUtopia Club - Member",
+      title: "Core Team Member",
+      company: "Game DevUtopia Club",
       period: "2024 - Present",
-      location: "PICT Game DevUtopia Club",
-      description:
-        "Contributed across multiple teams within the club, including event management, design, and technical support. Actively involved in planning and coordinating club events, creating visual assets, and assisting with technical setups. Gained hands on exposure to design workflows and learned the fundamentals of 3D modeling using Blender.",
+      description: [
+        "Contributed to event management, design, and technical support.",
+        "Coordinated club events and created visual assets.",
+        "Gained hands-on experience with 3D modeling using Blender."
+      ],
       icon: "🎮"
     },
     {
-      title: "Impetus & Concepts 2025 - Organizing Team",
+      title: "Organizing Team",
+      company: "Impetus & Concepts (PICT)",
       period: "2024",
-      location: "PICT, Pune",
-      description:
-        "Part of the organizing team for the annual technical festival, contributing to event planning, technical coordination, and promotional activities. Gained experience in teamwork, coordination under deadlines, and managing responsibilities in a large scale college event.",
+      description: [
+        "Managed technical coordination and promotional activities for the annual tech fest.",
+        "Developed teamwork and deadlines management skills in a high-pressure environment."
+      ],
       icon: "📅"
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -33 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <section id="experience" className="py-20 bg-dark-light">
+    <section id="experience" className="py-20 bg-dark-light relative overflow-hidden">
       <div className="container-custom section-padding">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
-          initial={{ opacity: 0, y: 50 }}
+          className="text-4xl md:text-5xl font-bold font-heading text-center mb-16 text-white"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <span className="text-primary">Experience</span>
+          My <span className="text-gradient">Journey</span>
         </motion.h2>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            className="space-y-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+        <div className="max-w-4xl mx-auto relative">
+          {/* Timeline Line */}
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-transparent opacity-30 rounded-full"></div>
+
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                className="bg-dark rounded-xl p-6 hover:bg-dark-lighter transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 border border-gray-800 hover:border-primary/30"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02, y: -5 }}
+                className={`flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="flex items-start gap-4">
-                  <motion.div
-                    className="text-3xl"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {exp.icon}
-                  </motion.div>
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                      <span className="text-primary font-medium">{exp.period}</span>
-                    </div>
-                    <p className="text-gray-400 mb-3">{exp.location}</p>
-                    <div className="text-gray-300 space-y-3">
-                      {exp.description}
-                    </div>
+                {/* Timeline Dot */}
+                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-dark border-2 border-primary rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                </div>
+
+                {/* Content */}
+                <div className="md:w-1/2 pl-12 md:pl-0 md:pr-12 last:md:pr-12 md:text-right">
+                  <div className={`glass p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 ${index % 2 === 0 ? "md:text-left md:ml-12" : "md:text-right md:mr-12"
+                    }`}>
+                    <span className="inline-block px-3 py-1 mb-3 text-xs font-medium text-primary bg-primary/10 rounded-full border border-primary/20">
+                      {exp.period}
+                    </span>
+                    <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
+                    <h4 className="text-gray-400 font-medium mb-4">{exp.company}</h4>
+
+                    <ul className={`space-y-2 text-gray-300 text-sm leading-relaxed ${index % 2 !== 0 ? "md:items-end" : "md:items-start"
+                      }`}>
+                      {exp.description.map((point, i) => (
+                        <li key={i} className="flex gap-2">
+                          <span className="text-primary mt-1 min-w-[10px]">▹</span>
+                          <span className={index % 2 !== 0 ? "text-right" : "text-left"}>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
+
+                {/* Spacer for the other side */}
+                <div className="hidden md:block md:w-1/2"></div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

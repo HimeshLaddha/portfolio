@@ -55,38 +55,51 @@ const Certifications = () => {
     ];
 
     return (
-        <section id="certifications" className="py-20 bg-dark-light">
-            <div className="container-custom section-padding">
+        <section id="certifications" className="py-20 relative bg-dark overflow-hidden">
+            {/* Background Enhancements */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none z-0"></div>
+
+            <div className="container-custom section-padding relative z-20">
                 <motion.h2
-                    className="text-4xl md:text-5xl font-bold text-center mb-16"
+                    className="text-4xl md:text-5xl font-bold font-heading text-center mb-16 text-white"
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    Certifications &<span className="text-primary"> Achievements</span>
+                    Certifications &<span className="text-gradient"> Achievements</span>
                 </motion.h2>
 
                 {/* Certifications */}
-                <div className="max-w-5xl mx-auto mb-16">
-                    <h3 className="text-2xl font-semibold mb-6 flex justify-center items-center text-primary">Certifications</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                <div className="max-w-6xl mx-auto mb-20">
+                    <h3 className="text-2xl font-bold font-heading mb-8 flex items-center gap-3 text-white">
+                        <span className="w-2 h-8 bg-primary rounded-full inline-block"></span>
+                        Certifications
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {certifications.map((cert, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-dark border border-gray-800 rounded-xl p-6 hover:border-primary/30 transition-all"
+                                className="glass p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 group h-full flex flex-col"
                                 whileHover={{ y: -5 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true }}
                             >
-                                <h4 className="text-lg font-semibold">{cert.title}</h4>
-                                <p className="text-gray-400 mb-2">{cert.org}</p>
-                                <p className="text-gray-300 mb-4">{cert.description}</p>
+                                <h4 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{cert.title}</h4>
+                                <p className="text-primary/80 font-medium mb-3 text-sm">{cert.org}</p>
+                                <p className="text-gray-400 mb-6 text-sm flex-grow leading-relaxed">{cert.description}</p>
                                 <a
                                     href={cert.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-primary font-medium hover:underline"
+                                    className="inline-flex items-center gap-2 text-white font-medium hover:text-primary transition-colors mt-auto group/link"
                                 >
-                                    View Certificate →
+                                    View Certificate
+                                    <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
                                 </a>
                             </motion.div>
                         ))}
@@ -94,24 +107,34 @@ const Certifications = () => {
                 </div>
 
                 {/* Achievements */}
-                <div className="max-w-5xl mx-auto">
-                    <h3 className="text-2xl font-semibold mb-6 flex justify-center items-center text-primary">Achievements</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                <div className="max-w-6xl mx-auto">
+                    <h3 className="text-2xl font-bold font-heading mb-8 flex items-center gap-3 text-white">
+                        <span className="w-2 h-8 bg-secondary rounded-full inline-block"></span>
+                        Achievements
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {achievements.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-dark border border-gray-800 rounded-xl p-6 hover:border-primary/30 transition-all"
+                                className="glass p-6 rounded-xl border border-white/5 hover:border-secondary/30 transition-all duration-300 group h-full flex flex-col"
                                 whileHover={{ y: -5 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true }}
                             >
-                                <h4 className="text-lg font-semibold">{item.title}</h4>
-                                <p className="text-gray-300 mb-4">{item.description}</p>
+                                <h4 className="text-xl font-bold text-white mb-4 group-hover:text-secondary transition-colors">{item.title}</h4>
+                                <p className="text-gray-300 mb-6 flex-grow leading-relaxed">{item.description}</p>
                                 <a
                                     href={item.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-primary font-medium hover:underline"
+                                    className="inline-flex items-center gap-2 text-white font-medium hover:text-secondary transition-colors mt-auto group/link"
                                 >
-                                    View Proof →
+                                    View Proof
+                                    <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
                                 </a>
                             </motion.div>
                         ))}
