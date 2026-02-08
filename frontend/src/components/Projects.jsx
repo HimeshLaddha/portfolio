@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
+import jobPortal from '../assets/job-portal.png';
+import herbiverse from "../assets/herbiverse.png";
+import quickStay from "../assets/quickStay.png";
+import quickChat from "../assets/quickChat.png";
+import cropDetection from "../assets/crop_detection.jpg"
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -9,7 +14,37 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "QuickStay",
+      title: "InsiderJobs - Job Portal Application",
+      description: "Full-stack job portal with authentication, job management, and resume uploads.",
+      detailedDescription:
+        "A production-ready job portal application built using the MERN stack. The platform supports recruiters and candidates with secure authentication, job posting and application workflows, resume uploads, and real-time error monitoring. It is designed with scalability and clean architecture in mind, following modern full-stack development practices.",
+      tech: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Clerk",
+        "Cloudinary",
+        "Sentry"
+      ],
+      domain: "Full-Stack",
+      features: [
+        "Secure authentication using Clerk for users and JWT-based auth for companies",
+        "Recruiter dashboard to post, update, and manage job listings",
+        "Candidate job search, filtering, and application system",
+        "Resume and company logo uploads via Cloudinary",
+        "Rich job descriptions using Quill editor",
+        "Real-time error monitoring and logging with Sentry"
+      ],
+      image: jobPortal,
+      imageFit: "object-contain object-center",
+      live: "https://job-portal-frontend-tau-dusky.vercel.app/",
+      github: "https://github.com/HimeshLaddha/job-portal"
+    },
+    {
+      title: "QuickStay - Hotel Booking System",
       description: "Hotel booking system with role-based authentication (Currently under development).",
       detailedDescription: "QuickStay is a comprehensive hotel booking platform designed to streamline the reservation process for both guests and hotel administrators. The system features role-based authentication, allowing different access levels for customers, hotel staff, and administrators. Currently in development, it aims to provide a complete solution for hotel management and booking.",
       tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
@@ -21,12 +56,13 @@ const Projects = () => {
         "Search and filter functionality for users",
         "Planned Stripe integration for secure payments"
       ],
-      image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: quickStay,
+      imageFit: "object-contain object-center",
       live: "https://hotel-booking-frontend-pink-delta.vercel.app/",
       github: "https://github.com/HimeshLaddha/Hotel_Booking"
     },
     {
-      title: "HerbiVerse",
+      title: "HerbiVerse - Interactive Herbal Learning Hub",
       description: "Interactive Herbal Learning Hub with 2D/3D models for educational purposes.",
       detailedDescription: "HerbiVerse is a comprehensive educational platform that combines traditional herbal knowledge with modern web technologies. The application features interactive 2D and 3D models of various herbs, allowing users to explore their properties, uses, and benefits in an immersive environment. Built with React and Three.js, it provides an engaging learning experience for students and enthusiasts of herbal medicine.",
       tech: ["React", "Tailwind", "Node", "Express", "Three.js", "MongoDB"],
@@ -37,12 +73,31 @@ const Projects = () => {
         "Comprehensive herb database with search functionality",
         "Educational modules, care tips, and medicinal uses"
       ],
-      image: "/herbiverse.jpg",
+      image: herbiverse,
+      imageFit: "object-contain object-center",
       live: "https://herbiverse.vercel.app/",
       github: "https://github.com/HimeshLaddha/Herbiverse"
     },
     {
-      title: "QuickChat",
+      title: "Crop Disease Detection - Machine Learning System",
+      description: "Machine learning system to detect crop diseases using image analysis.",
+      detailedDescription:
+        "Crop Disease Detection is a machine learning-based application designed to identify plant diseases from leaf images. The project focuses on improving agricultural productivity by enabling early disease detection. It uses image preprocessing and trained ML models to classify crops as healthy or diseased.",
+      tech: ["Python", "Machine Learning", "OpenCV", "NumPy", "Matplotlib"],
+      domain: "Machine Learning",
+      features: [
+        "Image-based crop disease classification",
+        "Preprocessing of plant leaf images",
+        "Prediction of healthy vs diseased crops",
+        "Improves early detection and prevention in agriculture"
+      ],
+      image: cropDetection,
+      imageFit: "object-contain object-center",
+      live: false,
+      github: "https://github.com/HimeshLaddha/crop_disease_detection"
+    },
+    {
+      title: "QuickChat - Real time Chat Application",
       description: "Real-time chat application with image sharing capabilities and modern UI.",
       detailedDescription: "QuickChat is a modern real-time messaging application built with the MERN stack and Socket.io. It enables users to communicate instantly with features like image sharing, typing indicators, and message status updates. The application focuses on providing a seamless chat experience with a clean, intuitive interface.",
       tech: ["React", "Tailwind", "Node", "Express", "MongoDB", "Socket.io"],
@@ -54,12 +109,30 @@ const Projects = () => {
         "Minimal, modern UI",
         "Responsive chat interface"
       ],
-      image: "https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: quickChat,
+      imageFit: "object-contain object-center",
       live: "https://chat-app-weld-five-80.vercel.app/",
       github: "https://github.com/HimeshLaddha/Chat_App"
     },
     {
-      title: "PassOp",
+      title: "Data Visualization Dashboard",
+      description: "Interactive data visualization project for meaningful insights.",
+      detailedDescription:
+        "A data visualization project focused on transforming raw datasets into interactive and insightful visual representations. The application demonstrates how data can be analyzed and communicated effectively using charts and graphs, making it easier to identify patterns and trends.",
+      tech: ["JavaScript", "Chart.js", "HTML", "CSS", "Python"],
+      domain: "Data Visualization",
+      features: [
+        "Interactive charts and graphs",
+        "Visualization of real-world datasets",
+        "Clear representation of trends and patterns",
+        "Improved decision-making through visual insights"
+      ],
+      image: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=500",
+      live: false,
+      github: "https://github.com/HimeshLaddha/data_visualization"
+    },
+    {
+      title: "PassOp - Password Manager",
       description: "Basic password manager built with encryption and a clean UI.",
       detailedDescription: "PassOp is a simple password management application that allows users to securely store and manage their login credentials. Built using the MERN stack, it focuses on basic functionality like saving passwords, organizing them by category, and ensuring data is encrypted using built-in Node.js crypto modules. It's an ideal starter project to demonstrate secure data handling and user authentication.",
       tech: ["MERN stack"],
@@ -75,7 +148,7 @@ const Projects = () => {
       github: "https://github.com/HimeshLaddha/Password_Manager"
     },
     {
-      title: "To Do List",
+      title: "To Do List - Productivity App",
       description: "A productivity app for managing daily tasks and projects.",
       detailedDescription: "A comprehensive task management application that helps users organize their daily activities and projects. Features include task categorization, priority levels, due dates, and progress tracking.",
       tech: ["React", "Node.js", "MongoDB"],
@@ -91,11 +164,28 @@ const Projects = () => {
       github: "https://github.com/HimeshLaddha/Todo_List"
     },
     {
+      title: "Bitlinks - URL Shortener Service",
+      description: "URL shortener service for generating and managing short links.",
+      detailedDescription:
+        "Bitlinks is a simple URL shortening service that converts long URLs into short, shareable links. The project demonstrates backend logic, database handling, and REST API design while focusing on real-world utility use cases.",
+      tech: ["Node.js", "Express.js", "MongoDB", "JavaScript"],
+      domain: "MERN-Stack",
+      features: [
+        "Generate short URLs from long links",
+        "Redirect users to original URLs",
+        "Backend API for link management",
+        "Database storage for persistent links"
+      ],
+      image: "https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=500",
+      live: false,
+      github: "https://github.com/HimeshLaddha/Bitlinks"
+    },
+    {
       title: "Portfolio Website",
       description: "Personal portfolio website with modern design and animations.",
       detailedDescription: "A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations, dark theme, and comprehensive sections showcasing skills, projects, and experience.",
       tech: ["React", "Tailwind", "Framer Motion"],
-      domain: "Frontend",
+      domain: "MERN-Stack",
       features: [
         "Responsive design with mobile-first approach",
         "Smooth animations and micro-interactions",
@@ -280,7 +370,7 @@ const ProjectCard = ({ project, onClick, index }) => (
       <img
         src={project.image}
         alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className={`w-full h-full ${project.imageFit || 'object-cover'} transition-transform duration-500 group-hover:scale-110`}
       />
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
       <div className="absolute top-3 right-3 bg-dark/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
@@ -349,6 +439,7 @@ ProjectCard.propTypes = {
     tech: PropTypes.arrayOf(PropTypes.string).isRequired,
     link: PropTypes.string,
     github: PropTypes.string,
+    imageFit: PropTypes.string,
   }).isRequired,
   onClick: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
