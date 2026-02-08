@@ -36,6 +36,13 @@ const Certifications = () => {
             description:
                 "Focused training on time series modeling, forecasting techniques, and analytical methods.",
             link: "/certificates/time-series-iitg.pdf"
+        },
+        {
+            title: "Generative AI Workshop",
+            org: "NxtWave",
+            description:
+                "Participated in a hands on Generative AI workshop focused on building custom AI models and understanding core GenAI concepts for real world applications.",
+            link: "/certificates/genai-nxtwave.pdf"
         }
     ];
 
