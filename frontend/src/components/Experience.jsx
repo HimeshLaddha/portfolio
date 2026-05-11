@@ -8,7 +8,7 @@ const Experience = () => {
       period: "Jul 2025 - Dec 2025",
       description: [
         "Contributed to a government project for Protean, handling 20% of UI development using Next.js & TypeScript.",
-        "Built pixel-perfect, scalable interfaces and ensured smooth backend integration.",
+        "Built enterprise-grade, accessible interfaces and ensured smooth backend integration.",
         "Independently handled 30% of UI and 50% of animation logic for a JWGlobal project.",
         "Mastered complex UI animations, improving logical thinking and attention to detail."
       ],
@@ -71,8 +71,8 @@ const Experience = () => {
                 </div>
 
                 {/* Content */}
-                <div className="md:w-1/2 pl-12 md:pl-0 md:pr-12 last:md:pr-12 md:text-right">
-                  <div className={`glass p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 ${index % 2 === 0 ? "md:text-left md:ml-12" : "md:text-right md:mr-12"
+                <div className="md:w-1/2 pl-12 md:pl-0 md:pr-12 last:md:pr-12">
+                  <div className={`glass p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 ${index % 2 === 0 ? "md:text-left md:ml-12" : "md:text-left md:mr-12"
                     }`}>
                     <span className="inline-block px-3 py-1 mb-3 text-xs font-medium text-primary bg-primary/10 rounded-full border border-primary/20">
                       {exp.period}
@@ -85,7 +85,7 @@ const Experience = () => {
                       {exp.description.map((point, i) => (
                         <li key={i} className="flex gap-2">
                           <span className="text-primary mt-1 min-w-[10px]">▹</span>
-                          <span className={index % 2 !== 0 ? "text-right" : "text-left"}>{point}</span>
+                          <span className={index % 2 !== 0 ? "text-left" : "text-left"}>{point}</span>
                         </li>
                       ))}
                     </ul>

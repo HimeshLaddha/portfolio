@@ -125,7 +125,7 @@ const Hero = () => {
             <div className="absolute hidden sm:block -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-30 blur-sm group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
             <img
-              src="/himesh.jpg"
+              src="/himesh.png"
               alt="Himesh Laddha"
               className="relative sm:block hidden w-[425px] h-[425px] rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-500 mx-auto"
             />

@@ -1,6 +1,10 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import PropTypes from "prop-types";
 
 const Certifications = () => {
+    const [showAllCerts, setShowAllCerts] = useState(false);
+
     const certifications = [
         {
             title: "AR/VR Bootcamp",
@@ -43,10 +47,51 @@ const Certifications = () => {
             description:
                 "Participated in a hands on Generative AI workshop focused on building custom AI models and understanding core GenAI concepts for real world applications.",
             link: "/certificates/genai-nxtwave.pdf"
+        },
+        {
+            title: "AI for Students: Build Your Own Generative AI Model",
+            org: "Nextwave",
+            description:
+                "Successfully completed the program focusing on building custom generative AI models and understanding AI foundations.",
+            link: "/certificates/ai-for-students-nextwave.pdf"
+        },
+        {
+            title: "Eureka Hackathon",
+            org: "Eureka",
+            description:
+                "Participation Certificate for demonstrating problem-solving and technical skills in the Eureka Hackathon.",
+            link: "/certificates/eureka-hackathon.pdf"
+        },
+        {
+            title: "Impetus and Concepts (InC)",
+            org: "PICT",
+            description:
+                "Participation in the Project Competition at Impetus and Concepts in domain Application Development (AD) & Machine Learning (ML).",
+            link: "/certificates/inc-aiml-competition.pdf"
+        },
+        {
+            title: "Pradnya (InC)",
+            org: "PICT",
+            description:
+                "Participation in the Pradnya Coding Competition at Impetus and Concepts.",
+            link: "/certificates/pradnya-coding-competition.pdf"
+        },
+        {
+            title: "Techfiesta",
+            org: "Techfiesta",
+            description:
+                "Participation Certificate for engaging in various technical challenges and events at Techfiesta.",
+            link: "/certificates/techfiesta.pdf"
         }
     ];
 
     const achievements = [
+        {
+            title: "Josh Hackathon Winner",
+            description:
+                "1st Place Winner at the Josh Software 24-hour Hackathon for building an AI Hallucination Detection System.",
+            link: "/certificates/josh-hackathon.pdf"
+        },
         {
             title: "Impetus & Concepts - Volunteer",
             description:
@@ -84,7 +129,7 @@ const Certifications = () => {
                         Certifications
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {certifications.map((cert, index) => (
+                        {certifications.slice(0, 6).map((cert, index) => (
                             <motion.div
                                 key={index}
                                 className="glass p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 group h-full flex flex-col"
@@ -111,6 +156,28 @@ const Certifications = () => {
                             </motion.div>
                         ))}
                     </div>
+
+                    {certifications.length > 6 && (
+                        <motion.div
+                            className="text-center mt-12"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <motion.button
+                                onClick={() => setShowAllCerts(true)}
+                                className="px-8 py-3 glass rounded-full text-white font-medium hover:bg-white/10 transition-colors border border-white/10 flex items-center gap-2 mx-auto"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                View All Certificates
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </motion.button>
+                        </motion.div>
+                    )}
                 </div>
 
                 {/* Achievements */}
@@ -148,8 +215,82 @@ const Certifications = () => {
                     </div>
                 </div>
             </div>
+
+            {/* All Certificates Modal */}
+            <AnimatePresence>
+                {showAllCerts && (
+                    <Modal onClose={() => setShowAllCerts(false)} maxWidth="max-w-7xl">
+                        <div className="p-6 md:p-10 h-[80vh] flex flex-col">
+                            <div className="flex justify-between items-center mb-8">
+                                <h2 className="text-3xl font-bold text-white">All Certificates</h2>
+                            </div>
+
+                            <div className="overflow-y-auto pr-2 custom-scrollbar flex-1">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {certifications.map((cert, index) => (
+                                        <motion.div
+                                            key={index}
+                                            className="glass p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 group h-full flex flex-col"
+                                            whileHover={{ y: -5 }}
+                                        >
+                                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{cert.title}</h4>
+                                            <p className="text-primary/80 font-medium mb-3 text-sm">{cert.org}</p>
+                                            <p className="text-gray-400 mb-6 text-sm flex-grow leading-relaxed">{cert.description}</p>
+                                            <a
+                                                href={cert.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-white font-medium hover:text-primary transition-colors mt-auto group/link"
+                                            >
+                                                View Certificate
+                                                <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </a>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </Modal>
+                )}
+            </AnimatePresence>
         </section>
     );
+};
+
+const Modal = ({ children, onClose, maxWidth = "max-w-4xl" }) => (
+    <motion.div
+        className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+    >
+        <motion.div
+            className={`relative w-full ${maxWidth} bg-dark rounded-2xl border border-white/10 shadow-2xl max-h-[90vh] flex flex-col overflow-hidden`}
+            initial={{ scale: 0.9, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.9, y: 20, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+        >
+            <button
+                onClick={onClose}
+                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white transition-colors backdrop-blur-md border border-white/10"
+            >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            {children}
+        </motion.div>
+    </motion.div>
+);
+
+Modal.propTypes = {
+    children: PropTypes.node.isRequired,
+    onClose: PropTypes.func.isRequired,
+    maxWidth: PropTypes.string,
 };
 
 export default Certifications;

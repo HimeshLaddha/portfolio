@@ -14,6 +14,64 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "TruthLens - AI Hallucination Detection",
+      description: "Real-time system to detect and score LLM hallucinations. 1st Place Winner at Josh Software Hackathon 2026.",
+      detailedDescription:
+        "1st Place Winner at the Josh Software 24-hour Hackathon (2026). TruthLens is a real-time system designed to detect and score LLM hallucinations. It features a robust 5-layer architecture pipeline including Intercept, Decomposition, Verification, Inference, and Risk Attribution, achieving 93%+ verification accuracy across 50+ real-time claims.",
+      tech: [
+        "GenAI",
+        "LLMs",
+        "Python",
+        "React"
+      ],
+      domain: "AI / Full-Stack",
+      features: [
+        "Real-time LLM hallucination detection",
+        "5-layer pipeline (Intercept, Decomposition, Verification, Inference, Risk)",
+        "93%+ verification accuracy across real-time claims",
+        "Award-winning system built in 24 hours"
+      ],
+      badge: "🥇 1st Place Winner",
+      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=500",
+      imageFit: "object-cover object-center",
+      live: false,
+      github: "https://github.com/HimeshLaddha/TruthLens"
+    },
+    {
+      title: "TradeGuard AI - Contract Analysis",
+      description: "Automates summarization of legal contracts and identifies hidden charges using LLM-as-a-judge logic.",
+      detailedDescription: "TradeGuard AI is a GenAI-powered contract analysis tool. It automates the summarization of complex legal contracts and intelligently identifies hidden charges or unfavorable clauses using advanced LLM-as-a-judge logic, empowering users to make informed legal decisions safely.",
+      tech: ["React", "Node.js", "Gemini API", "MongoDB"],
+      domain: "AI / Full-Stack",
+      features: [
+        "Automated contract summarization",
+        "LLM-as-a-judge logic for evaluating clauses",
+        "Identification of hidden charges",
+        "Secure document processing"
+      ],
+      image: "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=500",
+      imageFit: "object-cover object-center",
+      live: false,
+      github: "https://github.com/HimeshLaddha/TradeGuard-AI"
+    },
+    {
+      title: "Code Cure - Healthcare Management",
+      description: "Comprehensive digital consultation platform with real-time messaging and encrypted storage.",
+      detailedDescription: "Code Cure is a comprehensive digital consultation platform tailored for healthcare management. It enables secure, real-time messaging between patients and doctors and ensures data privacy with HIPAA-compliant encrypted storage.",
+      tech: ["React", "Node.js", "MongoDB", "Socket.io", "Cloudinary"],
+      domain: "Full-Stack",
+      features: [
+        "Real-time messaging for digital consultations",
+        "HIPAA-compliant encrypted storage",
+        "Secure patient-doctor portal",
+        "Media uploads via Cloudinary"
+      ],
+      image: "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=500",
+      imageFit: "object-cover object-center",
+      live: false,
+      github: "https://github.com/HimeshLaddha/Code-Cure"
+    },
+    {
       title: "InsiderJobs - Job Portal Application",
       description: "Full-stack job portal with authentication, job management, and resume uploads.",
       detailedDescription:
@@ -64,7 +122,7 @@ const Projects = () => {
     {
       title: "HerbiVerse - Interactive Herbal Learning Hub",
       description: "Interactive Herbal Learning Hub with 2D/3D models for educational purposes.",
-      detailedDescription: "HerbiVerse is a comprehensive educational platform that combines traditional herbal knowledge with modern web technologies. The application features interactive 2D and 3D models of various herbs, allowing users to explore their properties, uses, and benefits in an immersive environment. Built with React and Three.js, it provides an engaging learning experience for students and enthusiasts of herbal medicine.",
+      detailedDescription: "HerbiVerse is a comprehensive educational platform that combines traditional herbal knowledge with modern web technologies. The application features interactive 2D and 3D models of various herbs.",
       tech: ["React", "Tailwind", "Node", "Express", "Three.js", "MongoDB"],
       domain: "3D/Educational",
       features: [
@@ -95,6 +153,24 @@ const Projects = () => {
       imageFit: "object-contain object-center",
       live: false,
       github: "https://github.com/HimeshLaddha/crop_disease_detection"
+    },
+    {
+      title: "ReadOut - Cloud-Native Accessibility",
+      description: "Processes PDF text and converts it into refined, natural speech using cloud-native infrastructure.",
+      detailedDescription:
+        "ReadOut is an accessibility-focused SaaS application that processes PDF text and converts it into refined, natural speech. It leverages cloud-native infrastructure to deliver fast, scalable text-to-speech capabilities, ensuring digital content is accessible to everyone.",
+      tech: ["React", "Cloud-Native", "TTS API"],
+      domain: "Cloud",
+      features: [
+        "PDF text extraction and processing",
+        "High-quality natural text-to-speech conversion",
+        "Cloud-native scalable architecture",
+        "Focus on digital accessibility"
+      ],
+      image: "https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&w=500",
+      imageFit: "object-cover object-center",
+      live: false,
+      github: "https://github.com/HimeshLaddha/ReadOut"
     },
     {
       title: "QuickChat - Real time Chat Application",
@@ -358,7 +434,7 @@ const Projects = () => {
 
 const ProjectCard = ({ project, onClick, index }) => (
   <motion.div
-    className="glass rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 group cursor-pointer relative"
+    className={`glass rounded-xl overflow-hidden border ${project.badge ? 'border-yellow-500/50 hover:border-yellow-400' : 'border-white/5 hover:border-primary/50'} group cursor-pointer relative shadow-lg ${project.badge ? 'shadow-yellow-500/10' : ''}`}
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
@@ -373,29 +449,37 @@ const ProjectCard = ({ project, onClick, index }) => (
         className={`w-full h-full ${project.imageFit || 'object-cover'} transition-transform duration-500 group-hover:scale-110`}
       />
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-      <div className="absolute top-3 right-3 bg-dark/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-        <span className="text-primary text-xs font-bold tracking-wide uppercase">{project.domain}</span>
+
+      {/* Badge container logic */}
+      {project.badge ? (
+        <div className="absolute top-3 left-3 bg-gradient-to-r from-yellow-500 to-yellow-600 shadow-lg px-4 py-1.5 rounded-full border border-yellow-300/50 z-10 flex items-center gap-1">
+          <span className="text-white text-xs font-extrabold tracking-wider uppercase drop-shadow-md">{project.badge}</span>
+        </div>
+      ) : null}
+
+      <div className={`absolute top-3 right-3 bg-dark/80 backdrop-blur-md px-3 py-1 rounded-full border ${project.badge ? 'border-yellow-500/30' : 'border-white/10'}`}>
+        <span className={`${project.badge ? 'text-yellow-400' : 'text-primary'} text-xs font-bold tracking-wide uppercase`}>{project.domain}</span>
       </div>
     </div>
 
     <div className="p-6 relative">
-      <div className="absolute top-0 right-6 -mt-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+      <div className={`absolute top-0 right-6 -mt-8 w-12 h-12 ${project.badge ? 'bg-yellow-500 shadow-yellow-500/40' : 'bg-primary shadow-primary/30'} rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300`}>
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </div>
 
-      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+      <h3 className={`text-2xl font-bold text-white mb-2 transition-colors ${project.badge ? 'group-hover:text-yellow-400' : 'group-hover:text-primary'}`}>{project.title}</h3>
       <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
 
       <div className="flex flex-wrap gap-2 mt-auto">
-        {project.tech.slice(0, 3).map((t, i) => (
-          <span key={i} className="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">
+        {project.tech.slice(0, 4).map((t, i) => (
+          <span key={i} className={`text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border ${project.badge ? 'border-yellow-500/20' : 'border-white/5'}`}>
             {t}
           </span>
         ))}
-        {project.tech.length > 3 && (
-          <span className="text-xs font-medium text-gray-400 px-2 py-1">+{project.tech.length - 3}</span>
+        {project.tech.length > 4 && (
+          <span className="text-xs font-medium text-gray-400 px-2 py-1">+{project.tech.length - 4}</span>
         )}
       </div>
     </div>
