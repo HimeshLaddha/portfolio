@@ -74,8 +74,8 @@ const Contact = () => {
         </svg>
       ),
       label: "LinkedIn",
-      value: "Connect with me",
-      link: "https://linkedin.com/in/himesh-laddha-00bb47293"
+      value: "linkedin.com/in/himesh-laddha-00bb47293",
+      link: "https://www.linkedin.com/in/himesh-laddha-00bb47293"
     },
     {
       icon: (
@@ -84,7 +84,7 @@ const Contact = () => {
         </svg>
       ),
       label: "GitHub",
-      value: "Check my code",
+      value: "github.com/HimeshLaddha",
       link: "https://github.com/HimeshLaddha"
     }
   ];

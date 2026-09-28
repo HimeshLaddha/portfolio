@@ -46,7 +46,7 @@ const Footer = () => {
             className="text-center mb-10"
           >
             <h3 className="text-2xl font-bold font-heading text-white mb-2">Himesh.dev</h3>
-            <p className="text-gray-400">Building digital experiences that matter.</p>
+            <p className="text-gray-400">Building software. Solving problems. Learning continuously.</p>
           </motion.div>
 
           {/* Social Links */}
@@ -76,7 +76,7 @@ const Footer = () => {
 
           {/* Copyright & Links */}
           <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 text-sm text-gray-400">
-            <p>© {currentYear} Himesh Laddha. All rights reserved.</p>
+            <p>© 2026 Himesh Laddha. All rights reserved.</p>
 
             <div className="flex gap-6">
               <button onClick={scrollToTop} className="hover:text-primary transition-colors">Back to Top</button>

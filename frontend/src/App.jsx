@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import DsaCoreCS from './components/DsaCoreCS';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
@@ -17,6 +18,7 @@ function App() {
       <Hero />
       <About />
       <Skills />          {/* Show tech stack early */}
+      <DsaCoreCS />       {/* Data Structures, Algorithms & CS Core */}
       <Experience />      {/* Internship + clubs */}
       <Projects />        {/* Proof of skills */}
       <Certifications />

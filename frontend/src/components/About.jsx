@@ -4,14 +4,14 @@ const AboutSection = () => {
   const education = [
     {
       institution: "Pune Institute of Computer Technology",
-      period: "2023-2027",
-      degree: "B.E. in IT",
-      grade: "CGPA: 9.195",
+      period: "2023 – 2027",
+      degree: "B.E. in Information Technology",
+      grade: "CGPA: 9.32",
       icon: "🎓"
     },
     {
       institution: "Namo Rims Jr. College",
-      period: "2021-2023",
+      period: "2021 – 2023",
       degree: "HSC",
       grade: "78.33%",
       icon: "📘"
@@ -24,8 +24,6 @@ const AboutSection = () => {
       icon: "🏫"
     }
   ];
-
-
 
   return (
     <section id="about" className="py-20 relative bg-dark overflow-hidden">
@@ -63,13 +61,16 @@ const AboutSection = () => {
 
               <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
                 <p>
-                  I believe that real learning happens through building. As an Information Technology student, I&apos;ve refined my problem-solving skills by moving beyond theory and diving into hands-on system design. I specialize in the React ecosystem and Node.js, with a keen interest in 3D visuals using Three.js when the experience demands it.
+                  I&apos;m an Information Technology undergraduate at Pune Institute of Computer Technology (PICT) with a strong interest in software development and problem solving.
                 </p>
                 <p>
-                  Beyond web development, I am deeply invested in research-oriented computing. My seminar work on <strong className="text-primary font-medium">Driver Drowsiness Detection using AI</strong> involved extensive dataset analysis. I am actively seeking to bridge the gap between experimental AI and practical deployment.
+                  I enjoy building full-stack applications using React, Next.js, Node.js and MongoDB, with a particular interest in frontend architecture, interactive UI and scalable application design.
                 </p>
                 <p>
-                  I&apos;m someone who enjoys collaborating, learning from others, and helping teammates whenever possible. I value clean architecture and continuous iteration. Whether optimizing a backend service or fine-tuning a neural network, I aim to be a reliable engineer who delivers tangible value.
+                  During my frontend development internship at DesignTrip, I contributed to production client projects using Next.js and TypeScript, working on UI development, animations and responsive interfaces.
+                </p>
+                <p>
+                  Alongside development, I actively practice Data Structures &amp; Algorithms and core Computer Science fundamentals while exploring AI/ML through projects and hackathons.
                 </p>
               </div>
             </motion.div>
@@ -106,7 +107,7 @@ const AboutSection = () => {
                             <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
                               {edu.institution}
                             </h4>
-                            <span className="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mt-2 sm:mt-0 w-[95px]">
+                            <span className="text-xs font-bold text-center text-primary px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mt-2 sm:mt-0 w-[115px]">
                               {edu.period}
                             </span>
                           </div>

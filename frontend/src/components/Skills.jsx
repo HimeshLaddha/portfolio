@@ -3,8 +3,17 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
-      skills: ["HTML", "CSS", "React.js", "Next.js", "Tailwind CSS", "Three.js", "Framer Motion"],
+      title: "LANGUAGES",
+      skills: ["C++", "Java", "Python", "JavaScript", "TypeScript"],
+      icon: (
+        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      )
+    },
+    {
+      title: "FRONTEND",
+      skills: ["React.js", "Next.js", "Tailwind CSS", "Three.js", "Framer Motion"],
       icon: (
         <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -12,7 +21,7 @@ const Skills = () => {
       )
     },
     {
-      title: "Backend",
+      title: "BACKEND",
       skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs"],
       icon: (
         <svg className="w-10 h-10 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -21,16 +30,7 @@ const Skills = () => {
       )
     },
     {
-      title: "Languages",
-      skills: ["Python", "C++", "Java", "JavaScript", "Typescript"],
-      icon: (
-        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-      )
-    },
-    {
-      title: "Tools",
+      title: "TOOLS",
       skills: ["Git", "GitHub", "Vercel", "Figma", "Blender"],
       icon: (
         <svg className="w-10 h-10 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,8 +39,8 @@ const Skills = () => {
       )
     },
     {
-      title: "AI & Emerging Tech",
-      skills: ["GenAI", "LLMs", "Gemini API", "OpenAI"],
+      title: "AI / ML",
+      skills: ["TensorFlow", "scikit-learn", "LLMs", "Generative AI"],
       icon: (
         <svg className="w-10 h-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />

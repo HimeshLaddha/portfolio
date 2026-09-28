@@ -4,34 +4,35 @@ const Experience = () => {
   const experiences = [
     {
       title: "Frontend Developer Intern",
-      company: "TheDesignTrip",
-      period: "Jul 2025 - Dec 2025",
+      company: "DesignTrip",
+      period: "June 2025 – December 2025",
       description: [
-        "Contributed to a government project for Protean, handling 20% of UI development using Next.js & TypeScript.",
-        "Built enterprise-grade, accessible interfaces and ensured smooth backend integration.",
-        "Independently handled 30% of UI and 50% of animation logic for a JWGlobal project.",
-        "Mastered complex UI animations, improving logical thinking and attention to detail."
+        "Contributed to the frontend development of a government client project, implementing approximately 20% of the UI using Next.js and TypeScript.",
+        "Developed responsive, accessible and pixel-accurate interfaces based on design specifications.",
+        "Contributed approximately 30% of the UI and 50% of animation implementation for the JW Global project.",
+        "Built interactive animations and refined UI interactions with attention to performance and visual consistency."
       ],
-      icon: "💼"
+      icon: "💼",
+      prominent: true
     },
     {
       title: "Core Team Member",
-      company: "Game DevUtopia Club",
-      period: "2024 - Present",
+      company: "Game Dev Utopia",
+      period: "2024 – Present",
       description: [
-        "Contributed to event management, design, and technical support.",
-        "Coordinated club events and created visual assets.",
+        "Contributed to event management, design and technical support.",
+        "Coordinated club activities and created visual assets.",
         "Gained hands-on experience with 3D modeling using Blender."
       ],
       icon: "🎮"
     },
     {
       title: "Organizing Team",
-      company: "Impetus & Concepts (PICT)",
+      company: "Impetus & Concepts",
       period: "2024",
       description: [
         "Managed technical coordination and promotional activities for the annual tech fest.",
-        "Developed teamwork and deadlines management skills in a high-pressure environment."
+        "Developed teamwork and deadline management skills in a high-pressure environment."
       ],
       icon: "📅"
     }
@@ -47,7 +48,7 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          My <span className="text-gradient">Journey</span>
+          Experience &amp; <span className="text-gradient">Leadership</span>
         </motion.h2>
 
         <div className="max-w-4xl mx-auto relative">
